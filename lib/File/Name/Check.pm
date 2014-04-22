@@ -58,22 +58,6 @@ sub caseunique {
     opendir(my $dir_handle, $dir);
     @files = grep{ m/^${file}$/i } readdir($dir_handle);
     closedir($dir_handle);
-    
-=comment
-
-    {
-        no warnings 'File::Find';
-        find( \&wanted, @dirs );
-
-        sub wanted {
-            if ( $File::Find::name =~ m/^${file}$/i ) {
-                my $name = $File::Find::name;
-                push @files, $File::Find::name;
-            }
-        }
-    }
-    
-=cut
 
     return 1 if ( scalar @files == 1 );
 }
