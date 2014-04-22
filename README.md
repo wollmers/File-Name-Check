@@ -1,16 +1,3 @@
-    {
-        no warnings 'File::Find';
-        find( \&wanted, @dirs );
-
-        sub wanted {
-            if ( $File::Find::name =~ m/^${file}$/i ) {
-                my $name = $File::Find::name;
-                push @files, $File::Find::name;
-            }
-        }
-    }
-    
-
 # NAME
 
 File::Name::Check - Check file names
@@ -37,11 +24,3 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 # SEE ALSO
-
-# POD ERRORS
-
-Hey! __The above document had some coding errors, which are explained below:__
-
-- Around line 3:
-
-    Unknown directive: =comment
