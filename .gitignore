@@ -3,6 +3,7 @@
 !.gitignore
 !.perltidyrc
 !.perlcriticrc
+!.travis.yml
 
 # MAC specific
 ._*
@@ -18,7 +19,7 @@ Makefile*
 !Makefile.PL
 
 
-/Milla-Test-*
+/File-Name-Check-*
 /.build
 /_build*
 /Build
