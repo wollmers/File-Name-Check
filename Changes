@@ -1,6 +1,8 @@
 Revision history for File-Name-Check
 		
 {{$NEXT}}
+
+0.05  2014-08-16 15:31:37 CEST
         - improve tests
 
 0.04  2014-08-16 09:51:20 CEST
