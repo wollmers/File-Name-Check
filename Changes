@@ -1,6 +1,7 @@
 Revision history for File-Name-Check
 		
 {{$NEXT}}
+        - add travis
 
 0.02  2014-05-08 15:20:33 CEST
         - prepare release
