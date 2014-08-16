@@ -1,23 +1,25 @@
-# hidden files
-.*
-!.gitignore
-!.perltidyrc
-!.perlcriticrc
-!.travis.yml
-
-# MAC specific
-._*
+blib/
+.build/
+_build/
+cover_db/
+inc/
+Build
+!Build/
+Build.bat
+.last_cover_stats
 .DS_Store
+Makefile
+Makefile.old
+MANIFEST.bak
+META.yml
+MYMETA.yml
+nytprof.out
+nytprof/
+pm_to_blib
 
-# editor backup files
 *~
 *.bak
-
-# generated build files
-blib
-Makefile*
-!Makefile.PL
-
+._*
 
 /File-Name-Check-*
 /.build

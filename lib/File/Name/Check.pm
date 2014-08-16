@@ -10,6 +10,12 @@ use File::Spec;
 use Encode::Locale;
 use Encode;
 
+sub new {
+  my $class = shift;
+  # uncoverable condition false
+  bless @_ ? @_ > 1 ? {@_} : {%{$_[0]}} : {}, ref $class || $class;
+}
+
 # paranoic = caseunique + safechars
 sub paranoic {
     my $self = shift;
@@ -42,7 +48,7 @@ sub encoded {
     my $path = shift;
     my $encoding = shift;
     my ( $volume, $directories, $file ) = File::Spec->splitpath($path);
-    return $self->_reencode( $encoding, $file );
+    return $self->_reencode( $file, $encoding );
 }
 
 # unique under case-insensitive
