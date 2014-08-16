@@ -44,6 +44,7 @@
       },
       "test" : {
          "requires" : {
+            "File::Spec" : "0",
             "Test::More" : "0.88"
          }
       }
@@ -60,7 +61,7 @@
          "web" : "https://github.com/wollmers/File-Name-Check"
       }
    },
-   "version" : "0.06",
+   "version" : "0.07",
    "x_contributors" : [
       "Helmut Wollmersdorfer <helmut.wollmersdorfer@fixpunkt.de>",
       "Helmut Wollmersdorfer <helmut@wollmersdorfer.at>",
