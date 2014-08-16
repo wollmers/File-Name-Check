@@ -24,15 +24,11 @@ ok($object->safechars(__FILE__),'safechars');
 ok($object->locale(__FILE__),'locale');
 ok($object->encoded(__FILE__,'UTF-8'),'encoded');
 
-#my @base = (splitdir(dirname(__FILE__)), '..');
-#my $path = join('/', @base,);
 my $path = File::Spec->rel2abs();
 
-
-
-#print STDERR $path,"\n";
 ok($object->caseunique($path),'caseunique');
 ok($object->paranoic($path),'paranoic');
 
+ok(!$object->_reencode("\xFC",'UTF-8'),'_reencode \xFC');
 
 done_testing;
