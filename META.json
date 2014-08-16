@@ -4,7 +4,7 @@
       "Helmut Wollmersdorfer <helmut.wollmersdorfer@gmx.at>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Milla version v1.0.4, Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.132830",
+   "generated_by" : "Dist::Milla version v1.0.4, Dist::Zilla version 5.015, CPAN::Meta::Converter version 2.141170",
    "license" : [
       "perl_5"
    ],
@@ -26,7 +26,7 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "Module::Build::Tiny" : "0.035"
+            "Module::Build::Tiny" : "0.036"
          }
       },
       "develop" : {
@@ -60,8 +60,9 @@
          "web" : "https://github.com/wollmers/File-Name-Check"
       }
    },
-   "version" : "0.02",
+   "version" : "0.03",
    "x_contributors" : [
+      "Helmut Wollmersdorfer <helmut.wollmersdorfer@fixpunkt.de>",
       "Helmut Wollmersdorfer <helmut@wollmersdorfer.at>",
       "wollmers <helmut.wollmersdorfer@fixpunkt.de>"
    ]
