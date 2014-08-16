@@ -4,6 +4,9 @@ use warnings;
 
 use lib qw(../lib/ );
 
+use File::Spec;
+
+
 use Test::More;
 
 my $class = 'File::Name::Check';
@@ -21,7 +24,15 @@ ok($object->safechars(__FILE__),'safechars');
 ok($object->locale(__FILE__),'locale');
 ok($object->encoded(__FILE__,'UTF-8'),'encoded');
 
-#my $path = __FILE__;
-#ok($object->caseunique('./'),'caseunique');
+#my @base = (splitdir(dirname(__FILE__)), '..');
+#my $path = join('/', @base,);
+my $path = File::Spec->rel2abs();
+
+
+
+#print STDERR $path,"\n";
+ok($object->caseunique($path),'caseunique');
+ok($object->paranoic($path),'paranoic');
+
 
 done_testing;

@@ -1,6 +1,7 @@
 Revision history for File-Name-Check
 		
 {{$NEXT}}
+        - improve covergae
 
 0.05  2014-08-16 15:31:37 CEST
         - improve tests
