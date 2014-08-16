@@ -7,5 +7,8 @@ perl:
   - "5.12"
   - "5.10"
   - "5.8"
+before_install:
+  cpanm -n Devel::Cover &&
+  cpanm -n Devel::Cover::Report::Coveralls
 script:
-  perl Build.PL && ./Build build
+  perl Build.PL && ./Build build && cover -test -report coveralls
