@@ -31,8 +31,10 @@ ok($object->caseunique($path),'caseunique');
 ok($object->caseunique('a',qw( a b)),'caseunique (a b)');
 ok(!$object->caseunique('a',qw( a A )),'caseunique(a A)');
 
+ok($object->paranoic('a',qw( a b)),'paranoic (a b)');
 ok(!$object->paranoic('?',qw(? a) ),'paranoic');
 ok(!$object->paranoic("\x{FC}a","\x{FC}a","\x{FC}A"),'paranoic');
+ok(!$object->paranoic("a","a","A"),'paranoic');
 
 ok($object->paranoic($path),'paranoic');
 

@@ -10,3 +10,10 @@ on test => sub {
     requires 'Test::More', '0.88';
     requires 'File::Spec','0';
 };
+
+on 'develop' => sub {
+  requires 'Test::Spelling';
+  requires 'Test::MinimumVersion';
+  requires 'Test::Pod::Coverage';
+  requires 'Test::PureASCII';
+};

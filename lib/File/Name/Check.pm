@@ -111,6 +111,33 @@ File::Name::Check - Check file names
 
 File::Name::Check is a collection of utilities to check against restrictions of some environments.
 
+=head2 CONSTRUCTOR
+
+=over 4
+
+=item new()
+
+Creates a new object
+
+=back
+
+=head2 METHODS
+
+=over 4
+
+=item caseunique
+
+=item encoded
+
+=item locale
+
+=item paranoic
+
+=item safechars
+
+=back
+
+
 =head1 AUTHOR
 
 Helmut Wollmersdorfer E<lt>helmut.wollmersdorfer@gmx.atE<gt>

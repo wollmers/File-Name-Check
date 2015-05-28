@@ -1,6 +1,7 @@
 Revision history for File-Name-Check
 		
 {{$NEXT}}
+        - improved tests, coverage, docs
 
 0.08  2014-08-16 23:35:14 CEST
         - badges in pod

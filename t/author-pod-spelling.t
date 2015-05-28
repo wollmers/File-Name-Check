@@ -17,8 +17,9 @@ else {
   add_stopwords(qw(
      Helmut
      Wollmersdorfer
-     Subsequence
-     Subsequences
+     caseunique
+     paranoic
+     safechars
   ));
   all_pod_files_spelling_ok();
 }
