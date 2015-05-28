@@ -20,9 +20,8 @@ sub new {
 sub paranoic {
     my $self = shift;
     my $path = shift;
-    if ( $self->safechars($path) && $self->caseunique($path) ) {
-        return 1;
-    }
+
+    return ($self->safechars($path) && $self->caseunique($path,@_) ) ;
 }
 
 # matches qr/^[0-9a-zA-Z_.-]+$/
@@ -31,7 +30,7 @@ sub safechars {
     my $self = shift;
     my $path = shift;
     my ( $volume, $directories, $file ) = File::Spec->splitpath($path);
-    return 1 if ( $file =~ m/^[0-9a-zA-Z_.-]+$/ );
+    return ( $file =~ m/^[0-9a-zA-Z_.-]+$/ );
 }
 
 # can use locale encoding
@@ -55,14 +54,20 @@ sub encoded {
 sub caseunique {
     my $self = shift;
     my $path = shift;
+    my @names = @_;
+
     my ( $volume, $directories, $file ) = File::Spec->splitpath($path);
     my $dir = File::Spec->catpath( $volume, $directories );
 
     my @files;
-
-    opendir(my $dir_handle, $dir);
-    @files = grep{ m/^${file}$/i } readdir($dir_handle);
-    closedir($dir_handle);
+    if  (@names) {
+       @files = grep{ m/^${file}$/i } @names;
+    }
+    else {
+      opendir(my $dir_handle, $dir);
+      @files = grep{ m/^${file}$/i } readdir($dir_handle);
+      closedir($dir_handle);
+    }
 
     return 1 if ( scalar @files == 1 );
 }
@@ -89,10 +94,14 @@ __END__
 
 File::Name::Check - Check file names
 
-=for html
+=begin html
+
 <a href="https://travis-ci.org/wollmers/File-Name-Check"><img src="https://travis-ci.org/wollmers/File-Name-Check.png" alt="File-Name-Check"></a>
 <a href='https://coveralls.io/r/wollmers/File-Name-Check?branch=master'><img src='https://coveralls.io/repos/wollmers/File-Name-Check/badge.png?branch=master' alt='Coverage Status' /></a>
+<a href='http://cpants.cpanauthors.org/dist/File-Name-Check'><img src='http://cpants.cpanauthors.org/dist/File-Name-Check.png' alt='Kwalitee Score' /></a>
+<a href="http://badge.fury.io/pl/File-Name-Check"><img src="https://badge.fury.io/pl/File-Name-Check.svg" alt="CPAN version" height="18"></a>
 
+=end html
 
 =head1 SYNOPSIS
 
@@ -109,6 +118,12 @@ Helmut Wollmersdorfer E<lt>helmut.wollmersdorfer@gmx.atE<gt>
 =head1 COPYRIGHT
 
 Copyright 2014- Helmut Wollmersdorfer
+
+=begin html
+
+<a href='http://cpants.cpanauthors.org/author/wollmers'><img src='http://cpants.cpanauthors.org/author/wollmers.png' alt='Kwalitee Score' /></a>
+
+=end html
 
 =head1 LICENSE
 
